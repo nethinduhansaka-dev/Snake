@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="score-panel">
+        <div class="score-item">
+            <div class="score-label">SCORE</div>
+            <div class="score-value" id="score">0</div>
+        </div>
+        <div class="score-item">
+            <div class="score-label">HIGH SCORE</div>
+            <div class="score-value" id="highScore">0</div>
+        </div>
+        <div class="score-item">
+            <div class="score-label">LEVEL</div>
+            <div class="score-value" id="level">1</div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <canvas id="gameCanvas" width="480" height="480"></canvas>
+        <div class="overlay" id="gameOverOverlay">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <p>Controls: <span class="key">←</span> <span class="key">↑</span> <span class="key">↓</span> <span class="key">→</span> or WASD</p>
+        <div class="speed-control">
+            <label for="speedSlider">Snake Speed: <span id="speedValue">Normal</span></label>
+            <input type="range" id="speedSlider" min="1" max="5" value="3" class="slider">
+        </div>
+        <button onclick="togglePause()" id="pauseButton">Pause</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
